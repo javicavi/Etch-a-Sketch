@@ -22,10 +22,12 @@ function populateBoard(size) {
 populateBoard(16);
 
 function changeSize(input) {
+  let sizeError = document.querySelector(".error");
   if(input >= 2 && input <= 100) {
+    sizeError.style.display = "none";
     populateBoard(input);
   } else {
-    console.log("Input error.");
+    sizeError.style.display = "flex";
   }
   // When using a random color, if the grid size is changed, the last generated color
   // will remain fixed, so each time the size is changed, the color black will be set
